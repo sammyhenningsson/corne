@@ -71,35 +71,66 @@
         symbol_layer {
             display-name = "SYMBOL";
             bindings = <
-                &kp LS(GRAVE)    &kp LS(N4)       &kp LS(DOT)      &kp LS(N6)        &kp GRAVE         &none   &none     &kp RALT(N3)       &kp RALT(LS(N7))    &kp RALT(LS(N0))    &kp RALT(MINUS)     &kp RALT(LS(GRAVE))
-                &kp RALT(N2)     &kp LS(N8)       &kp LS(N9)       &kp LS(N7)        &kp LS(N1)        &none   &none     &kp APOS           &kp LS(APOS)        &kp LS(MINUS)       &kp MINUS           &kp LS(N8)
-                &kp NUBS         &kp LS(N5)       &kp LS(N0)       &kp LS(NUBS)      &kp LS(GRAVE)                       &kp RALT(LS(N7))   &kp RALT(N8)        &kp RALT(N9)        &kp RALT(NUBS)      &kp LS(N0)
-                                                  &trans           &trans            &trans                              &trans             &trans              &trans
+                &kp LS(GRAVE)    &kp LS(N4)       &kp LS(DOT)      &kp LS(N6)        &kp GRAVE         &none   &none     &kp LA(N3)      &kp RA(N7)         &kp RA(N0)          &kp RA(MINUS)     &kp RA(LS(GRAVE))
+                &kp RA(N2)       &kp LS(N8)       &kp LS(N9)       &kp LS(N7)        &kp LS(N1)        &none   &none     &kp APOS        &kp LS(APOS)       &kp LS(MINUS)       &kp MINUS         &kp LS(N8)
+                &kp NUBS         &kp LS(N5)       &kp LS(N0)       &kp LS(NUBS)      &kp LS(GRAVE)                       &none           &kp RA(N8)         &kp RA(N9)          &kp RA(NUBS)      &kp LS(N0)
+                                                  &trans           &trans            &trans                              &trans          &trans             &trans
             >;
         };
 
-        lower_layer {
-            display-name = "NUMBER";
+        right_layer {
+            display-name = "RIGHT";
+            bindings = <
+                &trans      &kp AT       &kp HASH   &kp DLLR    &kp PRCNT    &none  &none     &kp SYSREQ   &kp LC(W)         &kp LA(D)           &none     &none
+                &trans      &kp LS(N3)   &kp SEMI   &kp APOS    &trans       &none  &none     &kp LS(INS)  &kp BSPC          &kp DEL             &kp RET   &none
+                &kp LGUI    &trans       &trans     &caps_word  &kp CAPS                      &none        &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &none     &none
+                                         &trans     &kp SPACE   &to 5                         &none        &none             &none
+            >;
+        };
+
+        numpad_layer {
+            display-name = "NUMPAD";
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
+                              &trans &trans &trans               &trans &trans &trans
+            >;
+        };
+
+        navigate_layer {
+            display-name = "NAVIGATE";
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
+                              &trans &trans &trans               &trans &trans &trans
+            >;
+        };
+
+
+        functions_layer {
+            display-name = "Functions";
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   |  LALT  | RALT  | LFT | DWN |  UP | RGT |     |      |
             // | SHFT | BTCR| RGB | RST | BOOT| Unlock|        |       |     |     |     |     |     |      |
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
             bindings = <
-                &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0
-                &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans
-                &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &trans    &trans    &trans     &trans     &trans
-                                               &kp LGUI      &trans        &kp SPACE                             &kp LGUI  &trans    &kp SPACE
+                &kp F1        &kp F2           &kp F3        &kp F4        &kp F5             &none   &none     &kp F6    &kp F7    &kp F8     &kp F9     &kp F9
+                &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4       &none   &none     &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans
+                &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                       &trans    &trans    &trans     &trans     &trans
+                                               &kp LGUI      &trans        &to 0                                &kp LGUI  &trans    &kp SPACE
             >;
         };
 
         extra_layer_1 {
             display-name = "EXTRA 1";
             bindings = <
-           &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp LCTRL  &kp RCTRL  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-           &trans    &trans  &trans    &trans    &trans     &kp LALT   &kp RALT   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-           &trans    &trans  &trans    &trans    &trans                           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE                        &kp RET    &trans     &kp RALT
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
+                              &trans &trans &trans               &trans &trans &trans
             >;
         };
 
@@ -109,47 +140,7 @@
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
-                              &trans &trans &trans               &trans &trans &trans       
-            >;
-        };
-
-        extra_layer_3 {
-            display-name = "EXTRA 3";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
-                              &trans &trans &trans               &trans &trans &trans       
-            >;
-        };
-
-        extra_layer_4 {
-            display-name = "EXTRA 4";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
-                              &trans &trans &trans               &trans &trans &trans       
-            >;
-        };
-
-        extra_layer_5 {
-            display-name = "EXTRA 5";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
-                              &trans &trans &trans               &trans &trans &trans       
-            >;
-        };
-
-        extra_layer_6 {
-            display-name = "EXTRA 6";
-            bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans
-                              &trans &trans &trans               &trans &trans &trans       
+                              &trans &trans &trans               &trans &trans &trans
             >;
         };
     };
