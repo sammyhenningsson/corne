@@ -70,16 +70,11 @@
 
         symbol_layer {
             display-name = "SYMBOL";
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  | LCTRL | RCTRL |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |  LALT | RALT  |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |               |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |               | ENT |     | ALT |
             bindings = <
-                &trans                   &kp DOLLAR               &mt LEFT_SHIFT KP_DOT    &mt LEFT_SHIFT NUMBER_5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &mt LEFT_SHIFT NUMBER_2  &mt LEFT_SHIFT NUMBER_8  &mt LEFT_SHIFT NUMBER_9  &mt LEFT_SHIFT NUMBER_7  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans                   &trans                   &trans                   &trans                   &trans                  &trans  &trans  &trans  &trans  &trans
-                                                                  &trans                   &trans                   &trans                  &trans  &trans  &trans
+                &kp LS(GRAVE)    &kp LS(N4)       &kp LS(DOT)      &kp LS(N6)        &kp GRAVE         &none   &none     &kp RALT(N3)       &kp RALT(LS(N7))    &kp RALT(LS(N0))    &kp RALT(MINUS)     &kp RALT(LS(GRAVE))
+                &kp RALT(N2)     &kp LS(N8)       &kp LS(N9)       &kp LS(N7)        &kp LS(N1)        &none   &none     &kp APOS           &kp LS(APOS)        &kp LS(MINUS)       &kp MINUS           &kp LS(N8)
+                &kp NUBS         &kp LS(N5)       &kp LS(N0)       &kp LS(NUBS)      &kp LS(GRAVE)                       &kp RALT(LS(N7))   &kp RALT(N8)        &kp RALT(N9)        &kp RALT(NUBS)      &kp LS(N0)
+                                                  &trans           &trans            &trans                              &trans             &trans              &trans
             >;
         };
 
