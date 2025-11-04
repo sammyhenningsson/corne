@@ -71,20 +71,25 @@
         symbol_layer {
             display-name = "SYMBOL";
             bindings = <
-                &kp LS(GRAVE)    &kp LS(N4)       &kp LS(DOT)      &kp LS(N6)        &kp GRAVE         &none   &none     &kp LA(N3)      &kp RA(N7)         &kp RA(N0)          &kp RA(MINUS)     &kp RA(LS(GRAVE))
-                &kp RA(N2)       &kp LS(N8)       &kp LS(N9)       &kp LS(N7)        &kp LS(N1)        &none   &none     &kp APOS        &kp LS(APOS)       &kp LS(MINUS)       &kp MINUS         &kp LS(N8)
-                &kp NUBS         &kp LS(N5)       &kp LS(N0)       &kp LS(NUBS)      &kp LS(GRAVE)                       &none           &kp RA(N8)         &kp RA(N9)          &kp RA(NUBS)      &kp LS(N0)
-                                                  &trans           &trans            &trans                              &trans          &trans             &trans
+                //╭───────┬───────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+                    &kp LS(GRAVE)   &kp RA(N4)    &kp LS(DOT)   &kp LS(N6)    &kp EQUAL         &none   &none     &kp LS(N3)    &kp RA(N7)    &kp RA(N0)    &kp RA(MINUS) &kp RA(RIGHT_BRACKET)
+                //├───────────────┼─────────────┼─────────────┼─────────────┼─────┬───────┤                     ├─────────────┼─────────────┼─────────────┼─────────────┼─────┬───────┤
+                    &kp RA(N2)      &kp LS(N7)    &kp LS(MINUS) &kp LS(N2)    &kp APOS          &none   &none     &kp LS(N1)    &kp LS(N8)    &kp LS(N9)    &kp MINUS     &kp ASTERISK
+                //├───────────────┼─────────────┼─────────────┼─────────────┼─────┬───────┤                     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                    &kp NUBS        &kp LS(N5)    &kp LS(N0)    &kp LS(NUBS)  &kp LS(GRAVE)                       &kp LS(EQUAL) &kp RA(N8)    &kp RA(N9)    &kp RA(NUBS)  &kp LS(N0)
+                //├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                                                  &trans        &trans        &trans                              &trans        &trans        &trans
+                //                              ╰─────────────┴─────────────┴─────────────╯                     ╰─────────────┴─────────────┴─────────────╯
             >;
         };
 
         right_layer {
             display-name = "RIGHT";
             bindings = <
-                &trans      &kp AT       &kp HASH   &kp DLLR    &kp PRCNT    &none  &none     &kp SYSREQ   &kp LC(W)         &kp LA(D)           &none     &none
-                &trans      &kp LS(N3)   &kp SEMI   &kp APOS    &trans       &none  &none     &kp LS(INS)  &kp BSPC          &kp DEL             &kp RET   &none
-                &kp LGUI    &trans       &trans     &caps_word  &kp CAPS                      &none        &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &none     &none
-                                         &trans     &kp SPACE   &to 5                         &none        &none             &none
+                &trans      &kp AT       &kp HASH          &kp DLLR    &kp PRCNT    &none  &none     &kp SYSREQ   &kp LC(W)         &kp LA(D)           &none     &none
+                &trans      &kp GRAVE    &kp LEFT_BRACKET  &kp APOS    &trans       &none  &none     &kp LS(INS)  &kp BSPC          &kp DEL             &kp RET   &none
+                &kp LGUI    &trans       &trans            &caps_word  &kp CAPS                      &none        &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &none     &none
+                                         &trans            &kp SPACE   &to 5                         &none        &none             &none
             >;
         };
 
@@ -117,10 +122,10 @@
             // | SHFT | BTCR| RGB | RST | BOOT| Unlock|        |       |     |     |     |     |     |      |
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
             bindings = <
-                &kp F1        &kp F2           &kp F3        &kp F4        &kp F5             &none   &none     &kp F6    &kp F7    &kp F8     &kp F9     &kp F9
-                &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4       &none   &none     &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans
-                &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                       &trans    &trans    &trans     &trans     &trans
-                                               &kp LGUI      &trans        &to 0                                &kp LGUI  &trans    &kp SPACE
+                &kp F1        &kp F2           &kp F3        &kp F4          &kp F5             &none   &none     &kp F6       &kp F7    &kp F8     &kp F9     &kp F9
+                &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4       &none   &none     &kp LEFT     &kp DOWN  &kp UP     &kp RIGHT  &trans
+                &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &studio_unlock  &bootloader                          &bootloader  &trans    &trans     &trans     &trans
+                                               &kp LGUI      &trans          &to 0                                &kp LGUI     &trans    &kp SPACE
             >;
         };
 
