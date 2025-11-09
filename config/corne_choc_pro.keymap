@@ -14,17 +14,17 @@
 /* #define SE_OSLH KC_SCLN */
 /* #define SE_MINS KC_SLSH */
 #define SE_CIRC LS(RIGHT_BRACKET)
-#define SE_DLR RA(N4)
-#define SE_COLN LS(DOT)
+#define SE_DOLLAR RA(N4)
+#define SE_COLON LS(DOT)
 #define SE_AMPR LS(N6)
 #define SE_ACUT EQUAL
 #define SE_AT RA(N2)
 #define SE_SLASH LS(N7)
 #define SE_QUES LS(MINUS)
-#define SE_DQUO LS(N2)
+#define SE_DQUOT LS(N2)
 #define SE_APOS NUHS
 #define SE_LESS NUBS
-#define SE_EQL LS(N0)
+#define SE_EQUAL LS(N0)
 #define SE_GRTR LS(NUBS)
 #define SE_LBRACE RA(N7)
 #define SE_RBRACE RA(N0)
@@ -34,12 +34,18 @@
 #define SE_RPAR LS(N9)
 #define SE_PLUS MINUS
 #define SE_ASTR LS(NUHS)
-#define SE_GRV LS(EQUAL)
+#define SE_GRAV LS(EQUAL)
 #define SE_LBRACKET RA(N8)
 #define SE_RBRACKET RA(N9)
 #define SE_PIPE RA(NUBS)
 #define SE_SECT GRAV
+#define SE_PERCENT LS(N5)
+#define SE_EXCLAM LS(N1)
+#define SE_POUND LS(N3)
 
+#define L_SYM 1
+#define L_RIGHT 2
+#define L_FUNC 5
 
 / {
     chosen {
@@ -94,7 +100,7 @@
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp Z             &kp X             &kp C             &kp V             &kp B                                     &kp N             &kp M             &kp COMMA         &kp DOT           &kp FSLH
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
-                                                        &kp LGUI          &lt 1 SPACE       &kp ESC                                   &kp TAB           &lt 2 SPACE       &kp RET
+                                                        &kp LGUI          &lt L_SYM SPACE   &kp ESC                                   &kp TAB           &lt L_RIGHT SPACE   &kp RET
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                       ╰─────────────────┴─────────────────┴─────────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -104,11 +110,11 @@
             display-name = "SYMBOL";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                       ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp SE_CIRC       &kp RA(N4)        &kp LS(DOT)       &kp LS(N6)        &kp EQUAL             &none   &none       &kp LS(N3)       &kp SE_LBRACE      &kp SE_RBRACE     &kp RA(MINUS)     &kp SE_TILDE
+                    &kp SE_CIRC       &kp SE_DOLLAR     &kp SE_COLON      &kp SE_AMPR       &kp SE_ACUT            &none   &none      &kp SE_POUND      &kp SE_LBRACE     &kp SE_RBRACE     &kp SE_BSLS       &kp SE_TILDE
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp SE_AT         &kp SE_SLASH      &kp LS(MINUS)     &kp LS(N2)        &kp SE_APOS           &none   &none       &kp LS(N1)       &kp SE_LPAR        &kp SE_RPAR       &kp MINUS         &kp SE_ASTR
+                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_APOS           &none   &none       &kp SE_EXCLAM     &kp SE_LPAR       &kp SE_RPAR       &kp SE_PLUS       &kp SE_ASTR
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp NUBS          &kp LS(N5)        &kp LS(N0)        &kp LS(NUBS)      &kp SE_CIRC                               &kp LS(EQUAL)    &kp SE_LBRACKET    &kp SE_RBRACKET   &kp RA(NUBS)      &kp LS(N0)
+                    &kp SE_LESS       &kp SE_PERCENT    &kp SE_EQUAL      &kp SE_GRTR       &kp SE_CIRC                               &kp SE_GRAV       &kp SE_LBRACKET   &kp SE_RBRACKET   &kp SE_PIPE       &kp SE_EQUAL
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                    &trans           &trans             &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                       ╰─────────────────┴─────────────────┴─────────────────╯
@@ -125,7 +131,7 @@
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp LGUI          &trans            &trans            &caps_word        &kp CAPS                                  &none             &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))  &none            &none
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                       ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
-                                                        &trans            &kp SPACE         &to 5                                     &none             &none             &none
+                                                        &trans            &kp SPACE         &to L_FUNC                                &none             &none             &none
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                       ╰─────────────────┴─────────────────┴─────────────────╯
             >;
         };
