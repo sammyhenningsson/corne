@@ -41,6 +41,7 @@
 #define SE_POUND LS(N3)
 #define SE_ADIA APOS
 #define SE_AA LEFT_BRACKET
+#define SE_OO SEMI
 
 #define L_COLE 0
 #define L_RECURVA  1
@@ -236,21 +237,21 @@
             timeout-ms = <50>;
             key-positions = <30 31>;
             bindings = <&kp SE_AA>;
-            layers = <L_COLE L_RECURVA L_STURDY  L_QWERTY>;
+            layers = <L_COLE L_RECURVA L_STURDY L_QWERTY>;
         };
 
         combo_adia {
             timeout-ms = <50>;
             key-positions = <31 32>;
             bindings = <&kp SE_ADIA>;
-            layers = <L_COLE L_RECURVA L_STURDY  L_QWERTY>;
+            layers = <L_COLE L_RECURVA L_STURDY L_QWERTY>;
         };
 
         combo_oo {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&kp SE_ADIA>;
-            layers = <L_COLE L_RECURVA L_STURDY  L_QWERTY>;
+            bindings = <&kp SE_OO>;
+            layers = <L_COLE L_RECURVA L_STURDY L_QWERTY>;
         };
 
         combo_to_main {
