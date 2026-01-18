@@ -46,7 +46,7 @@
 #define L_COLE 0
 #define L_RECURVA  1
 #define L_STURDY  2
-#define L_QWERTY 3
+#define L_GRAPHITE 3
 #define L_SYM 4
 #define L_RIGHT 5
 #define L_NUM 6
@@ -237,21 +237,21 @@
             timeout-ms = <50>;
             key-positions = <30 31>;
             bindings = <&kp SE_AA>;
-            layers = <L_COLE L_RECURVA L_STURDY L_QWERTY>;
+            layers = <L_COLE L_RECURVA L_STURDY L_GRAPHITE>;
         };
 
         combo_adia {
             timeout-ms = <50>;
             key-positions = <31 32>;
             bindings = <&kp SE_ADIA>;
-            layers = <L_COLE L_RECURVA L_STURDY L_QWERTY>;
+            layers = <L_COLE L_RECURVA L_STURDY L_GRAPHITE>;
         };
 
         combo_oo {
             timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&kp SE_OO>;
-            layers = <L_COLE L_RECURVA L_STURDY L_QWERTY>;
+            layers = <L_COLE L_RECURVA L_STURDY L_GRAPHITE>;
         };
 
         combo_to_main {
@@ -311,15 +311,15 @@
             >;
         };
 
-        qwerty_layer {
-            display-name = "Qwerty";
+        graphite_layer {
+            display-name = "Graphite";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp Q             &kp W             &kp E             &kp R             &kp T                 &none  &none       &kp Y             &kp U             &kp I             &kp O             &kp P
+                    &kp B             &kp W             &kp D             &kp P             &kp Y                 &none  &none       &kp Q             &kp F             &kp O             &kp U             &kp J
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp A             &HML LCTRL S      &HML LALT D       &HML LSHIFT F     &kp G                 &none  &none       &kp H             &HMR RSHIFT J     &HMR LALT K       &HMR RCTRL L      &kp SEMI
+                    &kp N             &HML LCTRL R      &HML LALT T       &HML LSHIFT S     &kp C                 &none  &none       &kp BSPC          &HMR RSHIFT H     &HMR LALT A       &HMR RCTRL E      &kp I
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp Z             &kp X             &kp C             &lt L_VIM V       &kp B                                    &kp N             &kp M             &kp COMMA         &kp DOT           &kp FSLH
+                    &kp Z             &kp X             &kp M             &lt L_VIM G       &kp V                                    &kp K             &kp L             &kp COMMA         &kp DOT           &kp FSLH
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
@@ -375,7 +375,7 @@
             display-name = "Navigate";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp LG(L)         &to L_RECURVA     &to L_FUNC        &to L_QWERTY      &to L_B               &none  &none       &to L_MOUSE       &kp HOME          &kp END           &none             &kp PG_UP
+                    &kp LG(L)         &to L_RECURVA     &to L_FUNC        &to L_GRAPHITE    &to L_B               &none  &none       &to L_MOUSE       &kp HOME          &kp END           &none             &kp PG_UP
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp LGUI          &trans            &trans            &trans            &to L_STURDY          &none  &none       &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp PG_DN
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
