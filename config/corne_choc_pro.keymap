@@ -44,7 +44,7 @@
 #define SE_OO SEMI
 
 #define L_COLE 0
-#define L_RECURVA  1
+#define L_GRACURVA  1
 #define L_STURDY  2
 #define L_GRAPHITE 3
 #define L_SYM 4
@@ -238,21 +238,21 @@
             timeout-ms = <50>;
             key-positions = <30 31>;
             bindings = <&kp SE_AA>;
-            layers = <L_COLE L_RECURVA L_STURDY L_GRAPHITE>;
+            layers = <L_COLE L_GRACURVA L_STURDY L_GRAPHITE>;
         };
 
         combo_adia {
             timeout-ms = <50>;
             key-positions = <31 32>;
             bindings = <&kp SE_ADIA>;
-            layers = <L_COLE L_RECURVA L_STURDY L_GRAPHITE>;
+            layers = <L_COLE L_GRACURVA L_STURDY L_GRAPHITE>;
         };
 
         combo_oo {
             timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&kp SE_OO>;
-            layers = <L_COLE L_RECURVA L_STURDY L_GRAPHITE>;
+            layers = <L_COLE L_GRACURVA L_STURDY L_GRAPHITE>;
         };
 
         combo_to_main {
@@ -282,15 +282,15 @@
             >;
         };
 
-        recurva_layer {
-            display-name = "Recurva";
+        gracurva_layer {
+            display-name = "Gracurva";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp F             &kp R             &kp D             &kp P             &kp V                 &none  &none       &kp Q             &kp J             &kp U             &kp O             &kp Y
+                    &kp F             &kp R             &kp D             &kp P             &kp B                 &none  &none       &kp Q             &kp M             &kp O             &kp U             &kp J
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp S             &HML LCTRL N      &HML LALT T       &HML LSHIFT C     &kp B                 &none  &none       &kp BSPC          &HMR RSHIFT H     &HMR LALT E       &HMR RCTRL A      &kp I
+                    &kp S             &HML LCTRL N      &HML LALT T       &HML LSHIFT C     &kp W                 &none  &none       &kp Y             &HMR RSHIFT H     &HMR LALT A       &HMR RCTRL E      &kp I
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp Z             &kp X             &kp K             &lt L_VIM G       &kp W                                    &kp M             &kp L             &kp COMMA         &kp DOT           &kp FSLH
+                    &kp Z             &kp X             &kp K             &lt L_VIM G       &kp V                                    &kp BSPC          &kp L             &kp COMMA         &kp DOT           &kp FSLH
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
@@ -333,7 +333,7 @@
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
                     &kp SE_CIRC       &kp SE_DOLLAR     &kp SE_COLON      &kp SE_AMPR       &kp SE_ACUT           &none   &none      &kp SE_POUND      &kp SE_LBRACE     &kp SE_RBRACE     &kp SE_BSLS       &kp SE_TILDE
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_APOS           &none   &none      &kp SE_EXCLAM     &kp SE_LPAR       &kp SE_RPAR       &kp SE_PLUS       &kp SE_ASTR
+                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_EXCLAM         &none   &none      &kp SE_APOS       &kp SE_LPAR       &kp SE_RPAR       &kp SE_PLUS       &kp SE_ASTR
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp SE_LESS       &kp SE_PERCENT    &kp SE_EQUAL      &kp SE_GRTR       &kp SE_CIRC                              &kp SE_GRAV       &kp SE_LBRACKET   &kp SE_RBRACKET   &kp SE_PIPE       &kp SE_EQUAL
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
@@ -376,7 +376,7 @@
             display-name = "Navigate";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp LG(L)         &none             &to L_FUNC        &to L_B           &to L_RECURVA         &none  &none       &to L_MOUSE       &kp HOME          &kp END           &none             &none
+                    &kp LG(L)         &none             &to L_FUNC        &to L_B           &to L_GRACURVA        &none  &none       &to L_MOUSE       &kp HOME          &kp END           &none             &none
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp LGUI          &trans            &trans            &trans            &to L_GRAPHITE        &none  &none       &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp PG_UP
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
