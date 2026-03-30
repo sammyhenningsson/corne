@@ -184,6 +184,32 @@
                 ;
         };
 
+        vim_discard: vim_discard {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp DOT>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp Q>
+                , <&macro_tap &kp SE_EXCLAM>
+                , <&macro_tap &kp RET>
+                ;
+        };
+
+        vim_force_write: vim_force_write {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp DOT>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp SE_EXCLAM>
+                , <&macro_tap &kp RET>
+                ;
+        };
+
         vim_win_left: vim_win_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -332,7 +358,7 @@
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
                     &none             &none             &none             &kp K_MUTE        &kp K_VOL_UP          &none  &none       &kp SYSREQ        &kp LC(W)         &kp LA(D)         &none             &none
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &kp K_VOL_DN          &none  &none       &kp LC(BSPC)      &HMR LALT BSPC    &HMR RCTRL DEL    &kp RSHIFT        &kp RET
+                    &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &kp K_VOL_DN          &none  &none       &kp LC(BSPC)      &HMR LALT DEL    &HMR RCTRL SE_AA    &HMR RSHIFT SE_ADIA  &kp SE_OO
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp CAPS          &none             &kp SE_SECT       &caps_word        &kp CAPS                                 &none             &kp SPACE         &kp SE_QUES       &kp LS(INS)       &kp RET
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
@@ -375,11 +401,11 @@
             display-name = "Vim";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &trans            &trans            &trans            &trans            &trans                &none  &none       &trans            &vim_write        &vim_gwrite       &vim_close        &vim_close_all
+                    &trans            &vim_force_write  &trans            &trans            &trans                &none  &none       &vim_discard      &vim_write        &vim_gwrite       &vim_close        &vim_close_all
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &trans            &trans            &trans            &trans            &trans                &none  &none       &vim_win_left     &vim_win_down     &vim_win_up       &vim_win_right    &trans
+                    &trans            &trans            &trans            &trans            &trans                &none  &none       &kp H             &kp J             &kp K             &kp L            &trans
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &trans            &trans            &trans            &trans            &trans                                   &trans            &trans            &trans            &trans            &trans
+                    &trans            &trans            &trans            &trans            &trans                                   &vim_win_left     &vim_win_down     &vim_win_up       &vim_win_right    &trans
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
