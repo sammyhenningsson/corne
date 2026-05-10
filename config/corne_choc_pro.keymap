@@ -22,6 +22,7 @@
 #define SE_APOS NUHS
 #define SE_LESS NUBS
 #define SE_MINUS FSLH
+#define SE_UNDER LS(FSLH)
 #define SE_EQUAL LS(N0)
 #define SE_GRTR LS(NUBS)
 #define SE_LBRACE RA(N7)
@@ -148,6 +149,15 @@
 
 / {
     macros {
+        g_q: g_q {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp G>
+                , <&macro_tap &kp Q>
+                ;
+        };
+
         vim_write: vim_write {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -309,11 +319,11 @@
             display-name = "Graphmod";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp Z             &kp W             &kp D             &kp G             &kp V                 &none  &none       &kp BSPC          &kp F             &kp O             &kp U             &kp Q
+                    &kp X             &kp W             &kp D             &kp G             &kp V                 &none  &none       &kp BSPC          &kp F             &kp O             &kp U             &kp SE_AA
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp N             &HML LSHIFT R     &HML LCTRL T      &HML LALT S       &kp Y                 &none  &none       &kp K             &HMR LALT H       &HMR RCTRL A      &HMR RSHIFT E     &kp I
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp B             &kp M             &kp P             &lt L_VIM C       &kp X                                    &kp J             &kp L             &kp COMMA         &kp DOT           &kp SE_MINUS
+                    &kp B             &kp M             &kp P             &lt L_VIM C       &kp DOT                                  &kp J             &kp L             &kp COMMA         &kp SE_ADIA       &kp SE_OO
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &key_repeat       &lt L_SYM SPACE   &lt L_NUM ESC                            &lt L_NAV TAB     &lt L_RIGHT RET   &key_repeat
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
@@ -384,11 +394,11 @@
             display-name = "Right";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp SE_ACUT       &kp SE_GRAV       &none             &kp K_MUTE        &kp K_VOL_UP          &none  &none       &kp SYSREQ        &kp LC(W)         &kp LA(D)         &none             &none
+                    &kp SE_ACUT       &kp SE_GRAV       &none             &kp K_MUTE        &kp K_VOL_UP          &none  &none       &kp SYSREQ        &kp Q             &kp U             &none             &none
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &kp K_VOL_DN          &none  &none       &kp LC(BSPC)      &HMR LALT DEL     &HMR RCTRL SE_AA  &HMR RSHIFT SE_ADIA  &kp SE_OO
+                    &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &kp K_VOL_DN          &none  &none       &kp LC(BSPC)      &HMR LALT DEL     &HMR RCTRL Z      &HMR RSHIFT E     &kp RET
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp CAPS          &none             &kp SE_SECT       &caps_word        &kp CAPS                                 &none             &kp SPACE         &kp SE_QUES       &kp LS(INS)       &kp RET
+                    &kp CAPS          &kp LC(Z)         &kp SE_SECT       &caps_word        &kp CAPS                                 &none             &kp SE_UNDER      &g_q              &kp LS(INS)       &kp SE_MINUS
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &kp SPACE         &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
