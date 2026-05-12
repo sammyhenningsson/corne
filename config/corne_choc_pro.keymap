@@ -46,16 +46,14 @@
 #define SE_OO SEMI
 
 #define L_GRAPHMOD 0
-#define L_COLE 1
-#define L_STURDY  2
-#define L_SYM 3
-#define L_NUM 4
-#define L_RIGHT 5
-#define L_NAV 6
-#define L_VIM 7
-#define L_MOUSE 8
-#define L_FUNC 9
-#define L_B 10
+#define L_SYM 1
+#define L_NUM 2
+#define L_RIGHT 3
+#define L_NAV 4
+#define L_VIM 5
+#define L_MOUSE 6
+#define L_FUNC 7
+#define L_B 8
 #define L_MAIN L_GRAPHMOD
 
 
@@ -282,31 +280,12 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_aa {
-            timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&kp SE_AA>;
-            layers = <L_COLE L_GRAPHMOD L_STURDY>;
-        };
-
-        combo_adia {
-            timeout-ms = <50>;
-            key-positions = <31 32>;
-            bindings = <&kp SE_ADIA>;
-            layers = <L_COLE L_GRAPHMOD L_STURDY>;
-        };
-
-        combo_oo {
-            timeout-ms = <50>;
-            key-positions = <32 33>;
-            bindings = <&kp SE_OO>;
-            layers = <L_COLE L_GRAPHMOD L_STURDY>;
-        };
 
         combo_to_main {
             timeout-ms = <50>;
             key-positions = <30 31 32>;
             bindings = <&to L_MAIN>;
+            /* layers = <L_COLE L_GRAPHMOD L_STURDY>; */
         };
     };
 };
@@ -326,36 +305,6 @@
                     &kp B             &kp M             &kp P             &kp C             &kp X                                    &kp J             &kp L             &kp COMMA         &kp DOT           &kp SE_ADIA
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &key_repeat       &lt L_SYM SPACE   &lt L_NUM ESC                            &lt L_NAV TAB     &lt L_RIGHT RET   &key_repeat
-                //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
-            >;
-        };
-
-        colemak_layer {
-            display-name = "Colemak";
-            bindings = <
-                //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp Q             &kp W             &kp F             &kp P             &kp B                 &none  &none       &kp J             &kp L             &kp U             &kp Y             &kp K
-                //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp A             &HML LSHIFT R     &HML LCTRL S      &HML LALT T       &kp G                 &none  &none       &kp BSPC          &HMR LALT N       &HMR RCTRL E      &HMR RSHIFT I     &kp O
-                //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp Z             &kp X             &kp C             &lt L_VIM D       &kp V                                    &kp M             &kp H             &kp COMMA         &kp DOT           &kp SE_MINUS
-                //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
-                                                        &trans            &trans            &trans                                   &trans            &trans            &trans
-                //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
-            >;
-        };
-
-        sturdy_layer {
-            display-name = "Sturdy";
-            bindings = <
-                //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp V             &kp M             &kp L             &kp C             &kp P                 &none  &none       &kp Q             &kp F             &kp O             &kp U             &kp J
-                //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp S             &HML LSHIFT T     &HML LCTRL R      &HML LALT D       &kp Y                 &none  &none       &kp BSPC          &HMR LALT N       &HMR RCTRL A      &HMR RSHIFT E     &kp I
-                //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp Z             &kp X             &kp K             &lt L_VIM G       &kp W                                    &kp B             &kp H             &kp COMMA         &kp DOT           &kp SE_MINUS
-                //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
-                                                        &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
             >;
         };
@@ -411,9 +360,9 @@
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
                     &kp LG(L)         &to L_B           &to L_FUNC        &to L_MOUSE       &none                 &none  &none       &kp LA(LEFT)      &kp HOME          &kp END           &to L_NUM         &none
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &to L_COLE            &none  &none       &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp PG_UP
+                    &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &none                 &none  &none       &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp PG_UP
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &to L_MAIN        &trans            &kp SE_SECT       &trans            &to L_STURDY                             &msc SCRL_LEFT    &kp WS_L          &kp WS_R          &msc SCRL_RIGHT   &kp PG_DN
+                    &to L_MAIN        &trans            &kp SE_SECT       &trans            &none                                    &msc SCRL_LEFT    &kp WS_L          &kp WS_R          &msc SCRL_RIGHT   &kp PG_DN
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
