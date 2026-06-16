@@ -315,7 +315,7 @@
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
                     &kp SE_ACUT       &kp SE_GRAV       &kp SE_COLON      &kp SE_AMPR       &kp SE_CIRC           &none   &none      &kp BSPC          &kp SE_LBRACKET   &kp SE_RBRACKET   &kp SE_BSLS       &kp SE_TILDE
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_EXCLAM         &none   &none      &kp SE_APOS       &kp SE_LPAR       &kp SE_RPAR       &kp SE_EQUAL       &kp SE_PLUS
+                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_EXCLAM         &none   &none      &kp SE_APOS       &kp SE_LPAR       &kp SE_RPAR       &kp SE_EQUAL      &kp SE_PLUS
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼───────────────┤
                     &kp SE_LESS       &kp SE_PERCENT    &kp SE_EQUAL      &kp SE_GRTR       &kp SE_DOLLAR                            &kp SE_PIPE       &kp SE_LBRACE     &kp SE_RBRACE     &kp SE_POUND      &kp SE_ASTR
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
