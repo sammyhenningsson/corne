@@ -116,6 +116,24 @@
             require-prior-idle-ms = <150>;
         };
 
+        LL: LL {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+
+        LTOG: LTOG {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTOG";
+            bindings = <&tog>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+        };
+
         /* LT_STICK: LT_STICK { */
         /*     compatible = "zmk,behavior-hold-tap"; */
         /*     label = "LT_STICK"; */
@@ -315,7 +333,7 @@
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
                     &kp SE_ACUT       &kp SE_GRAV       &kp SE_COLON      &kp SE_AMPR       &kp SE_CIRC           &none   &none      &kp BSPC          &kp SE_LBRACKET   &kp SE_RBRACKET   &kp SE_BSLS       &kp SE_TILDE
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_EXCLAM         &none   &none      &kp SE_APOS       &kp SE_LPAR       &kp SE_RPAR       &kp SE_EQUAL       &kp SE_PLUS
+                    &kp SE_AT         &kp SE_SLASH      &kp SE_QUES       &kp SE_DQUOT      &kp SE_EXCLAM         &none   &none      &kp SE_APOS       &kp SE_LPAR       &kp SE_RPAR       &kp SE_EQUAL      &kp SE_PLUS
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼───────────────┤
                     &kp SE_LESS       &kp SE_PERCENT    &kp SE_EQUAL      &kp SE_GRTR       &kp SE_DOLLAR                            &kp SE_PIPE       &kp SE_LBRACE     &kp SE_RBRACE     &kp SE_POUND      &kp SE_ASTR
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
@@ -328,7 +346,7 @@
             display-name = "Numpad";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-                    &kp SE_EQUAL      &kp LC(T)         &kp SE_POUND      &kp LC(F)         &kp LC(D)             &none  &none       &kp BSPC          &kp N7            &kp N8            &kp N9            &kp SE_EQUAL
+                    &kp SE_EQUAL      &kp LC(T)         &kp SE_POUND      &kp LC(F)         &kp LC(D)             &none  &none       &kp BSPC          &kp N7            &kp N8            &kp N9            &LTOG L_MAIN SE_EQUAL
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &kp RET               &none  &none       &kp SE_ASTR       &HT SE_LPAR N4    &HT SE_RPAR N5    &kp N6            &kp SE_PLUS
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
@@ -362,7 +380,7 @@
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp LGUI          &kp LSHIFT        &kp LCTRL         &kp LALT          &none                 &none  &none       &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp PG_UP
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &to L_MAIN        &trans            &kp SE_SECT       &trans            &none                                    &msc SCRL_LEFT    &kp WS_L          &kp WS_R          &msc SCRL_RIGHT   &kp PG_DN
+                    &to L_MAIN        &LL L_NAV         &kp SE_SECT       &trans            &none                                    &msc SCRL_LEFT    &kp WS_L          &kp WS_R          &msc SCRL_RIGHT   &kp PG_DN
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
@@ -375,9 +393,9 @@
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
                     &trans            &vim_force_write  &trans            &trans            &trans                &none  &none       &vim_discard      &vim_write        &vim_gwrite       &vim_close        &vim_close_all
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &trans            &trans            &trans            &trans            &trans                &none  &none       &kp H             &kp J             &kp K             &kp L            &trans
+                    &trans            &trans            &trans            &trans            &trans                &none  &none       &kp H             &kp J             &kp K             &kp L             &trans
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &trans            &trans            &trans            &trans            &trans                                   &vim_win_left     &vim_win_down     &vim_win_up       &vim_win_right    &trans
+                    &trans            &LL L_VIM         &trans            &trans            &trans                                   &vim_win_left     &vim_win_down     &vim_win_up       &vim_win_right    &trans
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
