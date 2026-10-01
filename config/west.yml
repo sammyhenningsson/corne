@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -9,5 +11,10 @@ manifest:
       remote: zmkfirmware
       revision: 5138c6fb14783b756c5a3e61581625c700f3555b
       import: app/west.yml
+    # Adaptive keys (&AK_Q). Pinned to the module's latest source change
+    # (Nov 2025, later commits are CI only), contemporary with the ZMK pin above.
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: 924784d95dcffe8492ecaf99f47d0b2eeb2e242e
   self:
     path: config
