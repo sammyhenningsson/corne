@@ -50,22 +50,23 @@
 #define SE_AA LEFT_BRACKET
 #define SE_OO SEMI
 
-#define L_GRAPHMOD 0
-#define L_SYM 1
-#define L_SYMP 2
-#define L_NUM 3
-#define L_MOUSE 4
-#define L_ALPHAP 5
-#define L_NAV 6
-#define L_VIM 7
-#define L_FUNC 8
-#define L_B 9
-#define L_HEX 10
+#define L_QWERTY 0
+#define L_GRAPHMOD 1
+#define L_SYM 2
+#define L_SYMP 3
+#define L_NUM 4
+#define L_MOUSE 5
+#define L_ALPHAP 6
+#define L_NAV 7
+#define L_VIM 8
+#define L_FUNC 9
+#define L_B 10
+#define L_HEX 11
 // Speed modifiers for the Mouse layer: all-&trans layers that exist only so the
 // pointer/scroll input listeners can scale their events while one is held.
-#define L_MFAST 11
-#define L_MSLOW 12
-#define L_MAIN L_GRAPHMOD
+#define L_MFAST 12
+#define L_MSLOW 13
+#define L_MAIN L_QWERTY
 
 // MEH = Ctrl + Shift + Alt
 #define MEH LC(LS(LALT))
@@ -416,6 +417,21 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            display-name = "Querty";
+            bindings = <
+                //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
+                    &kp Q             &kp W             &kp E             &kp R             &kp T                 &none  &none       &kp Y             &kp U             &kp I             &kp O             &kp P
+                //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
+                    &LT_TH L_MOUSE A  &HML LSHIFT S     &HML LCTRL D      &HML LALT F       &lt L_VIM G           &none  &none       &lt L_VIM H       &HMR LALT J       &HMR RCTRL K      &HMR RSHIFT L     &HMR MEH SEMI
+                //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
+                    &kp Z             &kp X             &kp C             &lt L_VIM V       &kp B                                    &kp N             &kp M             &kp COMMA         &kp DOT           &kp FSLH
+                //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
+                                                        &key_repeat       &LT_TH L_SYM SPACE  &LT_TH L_NUM ESC                       &LT_TH L_NAV TAB  &LT_TH L_ALPHAP RET  &key_repeat
+                //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
+            >;
+        };
+
+        graphmod_layer {
             display-name = "Graphmod";
             bindings = <
                 //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮                      ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
@@ -425,7 +441,7 @@
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp Y             &HML MEH M        &kp P             &kp C             &kp COMMA                                &kp DOT           &kp L             &kp SE_ADIA       &kp K             &kp SE_OO
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
-                                                        &key_repeat       &LT_TH L_SYM SPACE  &LT_TH L_NUM ESC                       &LT_TH L_NAV TAB  &LT_TH L_ALPHAP RET  &key_repeat
+                                                        &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
             >;
         };
@@ -513,7 +529,7 @@
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
                     &kp LGUI          &kp LSHIFT        &kp RCTRL         &kp LALT          &kp K_VOL_DN          &none  &none       &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp PG_UP
                 //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-                    &to L_MAIN        &tog L_NAV        &kp BSPC          &kp K_PP          &kp K_MUTE                               &to L_MAIN        &msc SCRL_LEFT    &msc SCRL_RIGHT   &to L_NUM         &kp PG_DN
+                    &to L_MAIN        &tog L_NAV        &kp BSPC          &kp K_PP          &kp K_MUTE                               &to L_GRAPHMOD    &msc SCRL_LEFT    &msc SCRL_RIGHT   &to L_NUM         &kp PG_DN
                 //╰─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────────┤                      ├─────────────────┼─────────────────┼─────────────────┼─────────────────┴─────────────────╯
                                                         &trans            &trans            &trans                                   &trans            &trans            &trans
                 //                                    ╰─────────────────┴─────────────────┴─────────────────╯                      ╰─────────────────┴─────────────────┴─────────────────╯
